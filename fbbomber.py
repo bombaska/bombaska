@@ -153,28 +153,76 @@ def uklon(num):
 
 def kyivstar(num):
     browser.get("https://account.kyivstar.ua/cas/login")
-    # input_number = browser.find_element_by_xpath('//*[@id="section-left"]/section[2]/div/div/div[2]/input')
-    # input_number.click()
-    # input_number.send_keys(str(num))
-    # send_button = browser.find_element_by_xpath('//*[@id="section-left"]/section[2]/div/div/div[4]/div/div/button')
-    # send_button.click()
     sleep(1)
     pg.typewrite(num)
     sleep(0.3)
     pg.press('enter')
 
 
-# kyivstar(phoneNumber)
+def xtraTV(num):
+    browser.get("https://my.xtra.tv/")
+    reg_window = browser.find_element_by_xpath(
+        '/html/body/div/div/section/div/div/div[1]/a[2]')
+    reg_window.click()
+    phone_input = browser.find_element_by_xpath('//*[@id="phone"]')
+    phone_input.click()
+    pg.typewrite(num)
+    pg.press('enter')
+
+
+def silpo (num):
+    num = '0' + num
+    browser.get("https://silpo.ua/#auth")
+    num_input = browser.find_element_by_xpath('//*[@id="focused-phone"]')
+    num_input.click()
+    pg.typewrite(num)
+    pg.press('enter')
+def ukrzoloto (num):
+    browser.get("https://ukrzoloto.ua/ru/")
+    profile = browser.find_element_by_xpath('/html/body/header/div[2]/div[1]/div/div[1]/div[1]')
+    profile.click()
+    cab = browser.find_element_by_xpath('/html/body/header/div[2]/div[2]/div[2]/div[1]/div[2]/div')
+    cab.click()
+    sleep(0.3)
+    pg.typewrite(num)
+    register = browser.find_element_by_xpath('/html/body/div[6]/div/div/div[2]/div[1]/div[2]')
+    register.click()
+def gold_925(num):
+    browser.get("https://925.ua/")
+    log_in = browser.find_element_by_xpath('//*[@id="checkoutSidebar"]/div/div/div/div[3]/a/span')
+    log_in.click()
+    reg_window = browser.find_element_by_xpath('//*[@id="session-tabs"]/a[2]')
+    reg_window.click()
+    sleep(0.2)
+    name_input = browser.find_element_by_xpath('//*[@id="registerFullname"]')
+    name_input.click()
+    name_input.send_keys(str('Андрей'))
+    phone_input = browser.find_element_by_xpath('//*[@id="registerCellphone"]') 
+    phone_input.click()
+    sleep(0.2)
+    num = '0' + num
+    phone_input.send_keys(str(num))
+    comfirm = browser.find_element_by_xpath('//*[@id="registerForm"]/form/div/div[4]/button')
+    comfirm.click()
+    log_in_button = browser.find_element_by_xpath('//*[@id="session-tabs"]/a[1]')
+    log_in_button.click()
+    log_in_input = browser.find_element_by_xpath('//*[@id="loginCellphone"]')
+    log_in_input.send_keys(str(num))
+    enter = browser.find_element_by_xpath('//*[@id="loginForm"]/form/div/div[4]/button')
+    enter.click()
+gold_925(phoneNumber)
+# ukrzoloto(phoneNumber)
 # cookie_clear()
+# silpo(phoneNumber)
+# xtraTV(fullnumber)
+# kyivstar(phoneNumber)
+# sweet_tv(phoneNumber)
+# facebook(fullnumber)
+# tinder(phoneNumber)
 # uklon(phoneNumber) ---
 # twitch(fullnumber) # fullnumber or phoneNumber (more tests)
-# sweet_tv(phoneNumber)
 # oll_tv(fullnumber) # check more (cookies clear didn't help)
-# facebook(fullnumber)
-tinder(phoneNumber)
 # privat()
-
-sleep(0.5)
 
 # browser.find_element_by_xpath
 # browser.find_element_by_xpath
