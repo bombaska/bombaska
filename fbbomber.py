@@ -210,7 +210,7 @@ def gold_925(num):
     log_in_input.send_keys(str(num))
     enter = browser.find_element_by_xpath('//*[@id="loginForm"]/form/div/div[4]/button')
     enter.click()
-gold_925(phoneNumber)
+# gold_925(phoneNumber)
 # ukrzoloto(phoneNumber)
 # cookie_clear()
 # silpo(phoneNumber)
